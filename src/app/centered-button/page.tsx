@@ -6,9 +6,12 @@ import React from 'react'
 
 const CenteredButton = () => {
   const [colors, setColors] = React.useState<{ randomColor1: string, randomColor2: string } | null>(null)
-  const [buttonSize, setButtonSize] = React.useState<{ height: number, width: number }>({
+  const [buttonSize, setButtonSize] = React.useState<{ height: number, width: number, fontSize: number, iconWidth: number, iconHeight:number }>({
     width: 208,
-    height: 40
+    height: 40,
+    fontSize: 0.75,
+    iconWidth: 24,
+    iconHeight: 24,
   });
 
   const ref = React.useRef<HTMLDivElement>(null)
@@ -37,6 +40,9 @@ const CenteredButton = () => {
       return {
         width: prevState.width * 2,
         height: prevState.height * 2,
+        fontSize: prevState.fontSize * 2,
+        iconWidth: prevState.iconWidth * 2,
+        iconHeight: prevState.iconHeight * 2
       }
     });
   }
@@ -47,12 +53,12 @@ const CenteredButton = () => {
       ref={ref}
     >
       <Button
-        style={{width: buttonSize.width, height: buttonSize.height}} // Set the button size dynamically
+        style={{width: buttonSize.width, height: buttonSize.height, fontSize: `${buttonSize.fontSize}rem`}} // Set the button size dynamically
         className={cn('min-w-52 gap-3 uppercase')}
         variant={'glass'}
         onClick={handleOnClick}
       >
-        <Image alt={'Generate Icon'} src={'/svg/generate.svg'} width={24} height={24}/>
+        <Image alt={'Generate Icon'} src={'/svg/generate.svg'} width={buttonSize.iconWidth} height={buttonSize.iconHeight}/>
         Grow
       </Button>
     </div>

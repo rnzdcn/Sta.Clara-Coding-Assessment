@@ -28,7 +28,7 @@ const CardList = async () => {
             return (
               <Card
                 key={user.id}
-                className={cn(['p-2.5 md:p-8 min-w-[350px]', 'flex flex-col items-center', 'shadow-md'])}
+                className={cn(['p-2.5 md:p-8 min-w-full md:min-w-[320px] lg:min-w-[350px]', 'flex flex-col items-center', 'shadow-md'])}
               >
                 <Image
                   className={cn(['rounded-full border bg-black'])}

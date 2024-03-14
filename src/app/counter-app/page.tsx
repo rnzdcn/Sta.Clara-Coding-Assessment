@@ -56,14 +56,14 @@ const CounterApplication = () => {
   }
 
   return (
-    <CenteredContent className={cn(['flex-col gap-3.5 md:gap-8 lg:gap-16'])}>
-      <h1 className={cn(['text-6xl'])}>Counter Application</h1>
+    <CenteredContent className={cn(['flex-col gap-8 lg:gap-16 '])}>
+      <h1 className={cn(['text-6xl text-center'])}>Counter Application</h1>
 
-      <div className={cn(['flex flex-col items-center gap-2.5'])}>
+      <div className={cn(['flex flex-col items-center gap-2.5 '])}>
         <h2 className={'text-4xl'}>{count}</h2>
         <h3>{`The number is ${isOdd ? 'odd' : 'even'}`}</h3>
 
-        <div className={cn(['flex items-center gap-3.5 md:gap-8', 'mt-8'])}>
+        <div className={cn(['flex flex-col md:flex-row items-center gap-3.5 md:gap-8', 'mt-8'])}>
           {
             Array.from(buttons, ({title, src, alt, opt}, key) => (
               <Button

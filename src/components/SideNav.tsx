@@ -35,7 +35,7 @@ const menus: Array<Menu> = [
 
 const SideNav = () => {
   return (
-    <div className={cn(['side-nav', 'min-w-96', 'border-r-2', 'p-3.5 md:p-10'])}>
+    <div className={cn(['side-nav', 'hidden lg:block transition-all ease-in-out duration-500', 'min-w-96', 'border-r-2', 'p-3.5 md:p-10'])}>
       <div className={cn(['py-3.5 md:py-10'])}>
         <h1 className={cn(['text-center text-2xl'])}>Activity 1</h1>
       </div>

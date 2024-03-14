@@ -28,11 +28,11 @@ const SimpleCalculator = () => {
 
 
   return (
-    <CenteredContent className={cn(['flex-col gap-3.5 md:gap-8 lg:gap-16'])}>
-      <h1 className={cn(['text-6xl'])}>Simple Calculator</h1>
+    <CenteredContent className={cn(['flex-col gap-8 lg:gap-16'])}>
+      <h1 className={cn(['text-6xl text-center'])}>Simple Calculator</h1>
 
       <div className={cn(['flex flex-col items-center gap-2.5'])}>
-        <div className={cn(['flex flex-row items-center gap-2.5'])}>
+        <div className={cn(['flex flex-col md:flex-row items-center gap-2.5'])}>
           <Input
             value={input.firstNum.toString()}
             onChange={(event) => setInput(prevState => ({

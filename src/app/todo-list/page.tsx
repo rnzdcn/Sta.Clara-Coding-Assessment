@@ -53,33 +53,36 @@ const TodoList = () => {
 
   return (
     <div className={cn(['flex items-center flex-col gap-3.5 md:gap-8 lg:gap-16', 'p-3.5 md:p-8 lg:p-16'])}>
-      <h1 className={cn(['text-6xl'])}>Todo List</h1>
+      <h1 className={cn(['text-6xl text-center'])}>Todo List</h1>
 
-      <div className={cn(['flex flex-col gap-3.5 lg:gap-8', 'max-w-3xl'])}>
-        <div className={cn(['flex gap-2.5'])}>
+      <div className={cn(['flex flex-col gap-8', 'w-full md:max-w-3xl'])}>
+        <div className={cn(['flex flex-col sm:flex-row gap-2.5'])}>
           <Input
             value={todo}
             onChange={(event) => setTodo(event.target.value)}
             placeholder={'Start typing'}
             type={'text'}
           />
-          <Button
-            className={cn('min-w-32 gap-3')}
-            variant={'outline'}
-            onClick={handleAddTodo}
-          >
-            <Image alt={'Add Icon'} src={'/svg/add.svg'} width={24} height={24}/>
-            Add
-          </Button>
 
-          <Button
-            className={cn('min-w-32 gap-3')}
-            variant={'outline'}
-            onClick={handleDeleteTodo}
-          >
-            <Image alt={'Delete Icon'} src={'/svg/delete.svg'} width={24} height={24}/>
-            Delete
-          </Button>
+          <div className={cn(['flex gap-2.5'])}>
+            <Button
+              className={cn('w-full md:min-w-32 gap-3')}
+              variant={'outline'}
+              onClick={handleAddTodo}
+            >
+              <Image alt={'Add Icon'} src={'/svg/add.svg'} width={24} height={24}/>
+              Add
+            </Button>
+
+            <Button
+              className={cn('w-full md:min-w-32 gap-3')}
+              variant={'outline'}
+              onClick={handleDeleteTodo}
+            >
+              <Image alt={'Delete Icon'} src={'/svg/delete.svg'} width={24} height={24}/>
+              Delete
+            </Button>
+          </div>
         </div>
 
         <ul className={cn(['flex flex-col gap-3.5'])}>
